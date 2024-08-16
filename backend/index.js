@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const OpenAIApi = require("openai").default;
 
 if (process.env["OPENAI_API_KEY"] == undefined) {
@@ -10,6 +11,11 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParser.json());
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+    })
+);
 
 const openai = new OpenAIApi({
     apiKey: process.env.OPENAI_API_KEY,
