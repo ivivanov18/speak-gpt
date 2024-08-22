@@ -4,7 +4,7 @@ import SpeechComponent from "./SpeechComponent";
 function App() {
     return (
         <>
-            <div>
+            <div className="chat">
                 <h1>Speak GPT</h1>
                 <SpeechComponent />
             </div>
